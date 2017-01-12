@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.0_ef9bd33392250f969bf20ba36676c7fa12c143de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.0_d3aa275161f7783e27f78b6a03ebf8d15088dc66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8cc31f527ae59c24d6c231fc16c5a809f4f2f7f6">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_b3dd12ed51f48a5fa6934c1857bc6b2d4c50de09.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.0_aac7fb03865cf823564136182a6c8ee3dcfa0d15.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.0_a72b3d4d4058b793ad6c6dcac1f87181442c4624.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.0_dc5d83fed8cc93be360c712851596a4bad78dd13.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.0_dc4265e8e6cc3a48e7fd56f24df52b32fdb4502d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.0_0ee343381cf90e918106fc3021a3d1faa4aae7f5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.0_5ead3a70926d8f60b475b5e1e239b6e1b3440f05.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a81310685e2348a66741d7cccc1434678c8ebe56">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\instant-run_76e5cc8855203bafed179e1480bc241a578b4c2c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AndroidSDK\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\support-annotations-25.1.0_8b16b00a90b3b73a336a7720f92a8e291227f223.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="C:\AStudioProjects\Other\runforestrun\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.0_770313c8c12fed75baee829578f9f96bc548a7d9.jar" />
+    </item>
+
+</items>
