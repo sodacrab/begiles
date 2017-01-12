@@ -33,6 +33,6 @@ public class StepCalc {
         double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
         double d = earthRad * c;
 
-        return d * 1000 * 1000; // (meters)
+        return d * 1000 * 1000;
     }
 }
