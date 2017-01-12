@@ -3,21 +3,17 @@ package com.sodacrab.begiles;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.location.Address;
-import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.IOException;
-import java.util.List;
-import java.util.Locale;
+import com.sodacrab.begiles.VarContainer.GlobalVars;
+import com.sodacrab.begiles.calculations.StepCalc;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,15 +42,28 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onLocationChanged(Location loc) {
-            String longitude = "Longitude: " + loc.getLongitude();
-            String latitude = "Latitude: " + loc.getLatitude();
-            Toast.makeText(getBaseContext(), "Location updated", Toast.LENGTH_SHORT).show();
+            GlobalVars.lon2 = loc.getLongitude();
+            GlobalVars.lat2 = loc.getLatitude();
+
+            double speed = loc.getSpeed();
+            double time = loc.getTime();
+
+            double step = StepCalc.measureInMeters(GlobalVars.lon1, GlobalVars.lat1, GlobalVars.lon2, GlobalVars.lat2);
+            GlobalVars.lon1 = loc.getLongitude();
+            GlobalVars.lat1 = loc.getLatitude();
+
+            GlobalVars.range = GlobalVars.range + step;
 
             textView1.setText(
-                    "Location: " + longitude + ":" + latitude + "\n" +
-                            "Speed: " + "\n" +
-                            "Time: " + "\n" +
-                            "Range: " + "\n");
+                    "Current stats:\n" +
+                            "Location: " + GlobalVars.lon1 + ", " + GlobalVars.lat1 + "\n" +
+                            "Speed: " + speed + "\n" +
+                            "Time: " + time + "\n" +
+                            "Step: " + step + "\n" +
+                            "Range: " + GlobalVars.range + " (meters)"
+            );
+
+            Toast.makeText(getBaseContext(), "Location updated", Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -68,3 +77,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+
