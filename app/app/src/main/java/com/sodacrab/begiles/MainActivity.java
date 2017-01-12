@@ -40,25 +40,21 @@ public class MainActivity extends AppCompatActivity {
         }
         myLocationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 5000, 10, locationListener);
 
-        textView1.setText(
-                "location: " + StringLocationHandler.locationText + "\n" +
-                        "speed: " + "\n" +
-                        "time: " + "\n" +
-                        "range: " + "\n");
     }
 
     private class MyLocationListener implements LocationListener {
 
-        StringLocationHandler stringLocationHandler = new StringLocationHandler();
-
         @Override
         public void onLocationChanged(Location loc) {
-            stringLocationHandler.setText("");
             String longitude = "Longitude: " + loc.getLongitude();
             String latitude = "Latitude: " + loc.getLatitude();
-            Toast.makeText(getBaseContext(), "Location changed: " + longitude + latitude, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getBaseContext(), "Location updated", Toast.LENGTH_SHORT).show();
 
-            stringLocationHandler.setText(longitude + "\n" + latitude);
+            textView1.setText(
+                    "Location: " + longitude + ":" + latitude + "\n" +
+                            "Speed: " + "\n" +
+                            "Time: " + "\n" +
+                            "Range: " + "\n");
         }
 
         @Override
