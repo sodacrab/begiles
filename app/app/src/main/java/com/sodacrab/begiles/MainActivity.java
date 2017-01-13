@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 
         PrefsHandler.sharedPref = this.getPreferences(Context.MODE_PRIVATE);
         PrefsHandler.prefEditor = PrefsHandler.sharedPref.edit();
-        float[] tempPrefsLoader = PrefsHandler.loadPrefs(this);
+        float[] tempPrefsLoader = PrefsHandler.loadPrefs();
         GlobalVars.walkedDistance = tempPrefsLoader[0];
         GlobalVars.speed = tempPrefsLoader[1];
         GlobalVars.time = tempPrefsLoader[2];
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                             "Step: " + step + " (meters)\n" +
                             "Walked distance: " + GlobalVars.walkedDistance + " (meters)"
             );
-            PrefsHandler.savePrefs(getContext(), (float)GlobalVars.walkedDistance, (float)GlobalVars.time, (float)GlobalVars.speed);
+            PrefsHandler.savePrefs((float)GlobalVars.walkedDistance, (float)GlobalVars.time, (float)GlobalVars.speed);
 
             GlobalVars.prevLon = loc.getLongitude();
             GlobalVars.prevLat = loc.getLatitude();

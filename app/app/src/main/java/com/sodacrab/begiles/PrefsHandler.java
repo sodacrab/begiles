@@ -12,18 +12,19 @@ public class PrefsHandler {
     public static SharedPreferences sharedPref;
     public static SharedPreferences.Editor prefEditor;
 
-    public static void savePrefs(Context con, float data1, float data2, float data3) {
-        prefEditor.putFloat(con.getString(R.string.distance), data1);
-        prefEditor.putFloat(con.getString(R.string.time), data2);
-        prefEditor.putFloat(con.getString(R.string.speed), data3);
+    private static int defaultValue = 0;
+
+    public static void savePrefs(float data1, float data2, float data3) {
+        prefEditor.putFloat("distance", sharedPref.getFloat("distance", defaultValue) + data1);
+        prefEditor.putFloat("speed", sharedPref.getFloat("speed", defaultValue) + data2);
+        prefEditor.putFloat("time", sharedPref.getFloat("time", defaultValue) + data3);
         prefEditor.commit();
     }
-    public static float[] loadPrefs(Context con) {
+    public static float[] loadPrefs() {
         float[] temp = new float[3];
-        int defaultValue = 0;
-        temp[0] = sharedPref.getFloat(con.getString(R.string.distance), defaultValue);
-        temp[1] = sharedPref.getFloat(con.getString(R.string.time), defaultValue);
-        temp[2] = sharedPref.getFloat(con.getString(R.string.speed), defaultValue);
+        temp[0] = sharedPref.getFloat("distance" , defaultValue);
+        temp[1] = sharedPref.getFloat("time", defaultValue);
+        temp[2] = sharedPref.getFloat("speed", defaultValue);
         return temp;
     }
 }
