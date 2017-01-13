@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Run, Forest, Run!</string>
+
+    <!-- Shared Preferences Fields: !-->
+    <string name="distance"></string>
+    <string name="time"></string>
+    <string name="speed"></string>
 </resources>

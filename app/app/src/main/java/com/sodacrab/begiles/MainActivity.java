@@ -2,6 +2,7 @@ package com.sodacrab.begiles;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -19,13 +20,13 @@ import com.loopj.android.http.RequestParams;
 import com.sodacrab.begiles.VarContainer.GlobalVars;
 import com.sodacrab.begiles.calculations.StepCalc;
 
-import cz.msebera.android.httpclient.Header;
-
 public class MainActivity extends AppCompatActivity {
 
     private LocationManager myLocationManager;
     private LocationListener locationListener;
     private TextView textView1;
+
+    static Context context;
 
     private String android_id;
 
@@ -35,7 +36,18 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView1 = (TextView) findViewById(R.id.textView1);
 
+        context = this;
+
         android_id = Secure.getString(this.getContentResolver(), Secure.ANDROID_ID);
+
+        PrefsHandler.sharedPref = this.getPreferences(Context.MODE_PRIVATE);
+        PrefsHandler.prefEditor = PrefsHandler.sharedPref.edit();
+        float[] tempPrefsLoader = PrefsHandler.loadPrefs(this);
+        GlobalVars.walkedDistance = tempPrefsLoader[0];
+        GlobalVars.speed = tempPrefsLoader[1];
+        GlobalVars.time = tempPrefsLoader[2];
+
+        Toast.makeText(getBaseContext(), "" + GlobalVars.walkedDistance, Toast.LENGTH_SHORT).show();
 
         myLocationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         locationListener = new MyLocationListener();
@@ -49,18 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     private class MyLocationListener implements LocationListener {
 
-        private ServerRestClient src = new ServerRestClient();
-        private RequestParams params = new RequestParams();
-        private AsyncHttpClient client = new AsyncHttpClient();
-        private AsyncHttpResponseHandler respClient;
-
         @Override
         public void onLocationChanged(Location loc) {
             double newLon = loc.getLongitude();
             double newLat = loc.getLatitude();
 
-            double speed = loc.getSpeed();
-            double time = loc.getTime();
+            GlobalVars.speed = loc.getSpeed();
+            GlobalVars.time = loc.getTime();
 
             double step = 0;
             if (GlobalVars.prevLon != 0 && GlobalVars.prevLat != 0) {
@@ -72,39 +79,12 @@ public class MainActivity extends AppCompatActivity {
                     "Current statistics:\n" +
                             "Current Location: " + newLon + ", " + newLat + "\n" +
                             "Previous location: " + GlobalVars.prevLon + ", " + GlobalVars.prevLat + "\n" +
-                            "Speed: " + speed + "\n" +
-                            "Time: " + time + "\n" +
+                            "Speed: " + GlobalVars.speed + "\n" +
+                            "Time: " + GlobalVars.time + "\n" +
                             "Step: " + step + " (meters)\n" +
                             "Walked distance: " + GlobalVars.walkedDistance + " (meters)"
             );
-
-            /*
-            client.get(GlobalVars.API_URL, new AsyncHttpResponseHandler() {
-                @Override
-                public void onStart() {
-                }
-                @Override
-                public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
-                }
-                @Override
-                public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
-                }
-                @Override
-                public void onRetry(int retryNo) {
-                }
-                @Override
-                public void onProgress(long bytesWritten, long totalSize) {
-                }
-                @Override
-                public void onFinish() {
-                }
-            });
-            params.put("android_id", android_id);
-            params.put("distance_walked", GlobalVars.walkedDistance);
-            params.put("time", time);
-
-            src.post(GlobalVars.API_URL, params, respClient);
-            */
+            PrefsHandler.savePrefs(getContext(), (float)GlobalVars.walkedDistance, (float)GlobalVars.time, (float)GlobalVars.speed);
 
             GlobalVars.prevLon = loc.getLongitude();
             GlobalVars.prevLat = loc.getLatitude();
@@ -121,6 +101,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onStatusChanged(String provider, int status, Bundle extras) {}
     }
-
+    public static Context getContext() {
+        if (context == null) context = new MainActivity();
+        return context;
+    }
 }
 
